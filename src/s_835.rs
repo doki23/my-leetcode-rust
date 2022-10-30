@@ -53,26 +53,26 @@ fn test_cases() {
 
     let mut test_cases = Vec::new();
 
-    // let t1 = TestCase {
-    //     img1: vec![vec![1, 1, 0], vec![0, 1, 0], vec![0, 1, 0]],
-    //     img2: vec![vec![0, 0, 0], vec![0, 1, 1], vec![0, 0, 1]],
-    //     answer: 3,
-    // };
-    // test_cases.push(t1);
-    //
-    // let t2 = TestCase {
-    //     img1: vec![vec![1]],
-    //     img2: vec![vec![1]],
-    //     answer: 1,
-    // };
-    // test_cases.push(t2);
-    //
-    // let t3 = TestCase {
-    //     img1: vec![vec![0]],
-    //     img2: vec![vec![0]],
-    //     answer: 0,
-    // };
-    // test_cases.push(t3);
+    let t1 = TestCase {
+        img1: vec![vec![1, 1, 0], vec![0, 1, 0], vec![0, 1, 0]],
+        img2: vec![vec![0, 0, 0], vec![0, 1, 1], vec![0, 0, 1]],
+        answer: 3,
+    };
+    test_cases.push(t1);
+
+    let t2 = TestCase {
+        img1: vec![vec![1]],
+        img2: vec![vec![1]],
+        answer: 1,
+    };
+    test_cases.push(t2);
+
+    let t3 = TestCase {
+        img1: vec![vec![0]],
+        img2: vec![vec![0]],
+        answer: 0,
+    };
+    test_cases.push(t3);
 
     let t4 = TestCase {
         img1: vec![
