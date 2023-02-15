@@ -1,7 +1,7 @@
 use crate::Solution;
-use std::cmp;
 
 impl Solution {
+    #[cfg(test)]
     pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
         let mut tail = 0;
         let mut next = tail + 1;
@@ -15,7 +15,7 @@ impl Solution {
                 nums[tail] = next_val;
                 next += 1;
             } else {
-                next = cmp::max(nums[next..].partition_point(|x| *x <= next_val), next + 1);
+                next = std::cmp::max(nums[next..].partition_point(|x| *x <= next_val), next + 1);
             }
         }
         (tail + 1) as i32

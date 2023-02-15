@@ -1,6 +1,7 @@
 use crate::Solution;
 
 impl Solution {
+    #[cfg(test)]
     pub fn intersect(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
         let mut bitmap = vec![0; 1001];
         for i in 0..nums1.len() {

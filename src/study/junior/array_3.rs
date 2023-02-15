@@ -1,6 +1,7 @@
 use crate::Solution;
 
 impl Solution {
+    #[cfg(test)]
     pub fn rotate(nums: &mut Vec<i32>, k: i32) {
         let len = nums.len();
         let k = k as usize % len;

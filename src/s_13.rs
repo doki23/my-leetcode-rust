@@ -1,5 +1,4 @@
 use crate::Solution;
-use std::collections::HashMap;
 
 // 字符          数值
 // I             1
@@ -11,8 +10,9 @@ use std::collections::HashMap;
 // M             1000
 //
 impl Solution {
+    #[cfg(test)]
     pub fn roman_to_int(s: String) -> i32 {
-        let mapping: HashMap<char, i32> = [
+        let mapping: std::collections::HashMap<char, i32> = [
             ('I', 1),
             ('V', 5),
             ('X', 10),

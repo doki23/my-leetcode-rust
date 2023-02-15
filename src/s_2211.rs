@@ -1,7 +1,7 @@
 use crate::Solution;
-use std::mem;
 
 impl Solution {
+    #[cfg(test)]
     pub fn count_collisions(directions: String) -> i32 {
         let mut chars = directions.chars().collect::<Vec<char>>();
         let mut count = 0;
@@ -24,8 +24,8 @@ impl Solution {
                 | (_, None) => i += 1,
                 ('R', Some('L')) => {
                     count += 2;
-                    let _ = mem::replace(&mut chars[i], 'S');
-                    let _ = mem::replace(&mut chars[i + 1], 'S');
+                    let _ = std::mem::replace(&mut chars[i], 'S');
+                    let _ = std::mem::replace(&mut chars[i + 1], 'S');
                     if i >= 1 {
                         i -= 1;
                     } else {
@@ -34,7 +34,7 @@ impl Solution {
                 }
                 ('R', Some('S')) => {
                     count += 1;
-                    let _ = mem::replace(&mut chars[i], 'S');
+                    let _ = std::mem::replace(&mut chars[i], 'S');
                     if i >= 1 {
                         i -= 1;
                     } else {
@@ -43,7 +43,7 @@ impl Solution {
                 }
                 ('S', Some('L')) => {
                     count += 1;
-                    let _ = mem::replace(&mut chars[i + 1], 'S');
+                    let _ = std::mem::replace(&mut chars[i + 1], 'S');
                     i += 1;
                 }
                 _ => unreachable!(),

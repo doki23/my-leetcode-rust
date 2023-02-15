@@ -1,6 +1,7 @@
 use crate::Solution;
 
 impl Solution {
+    #[cfg(test)]
     pub fn min_mutation(start: String, end: String, bank: Vec<String>) -> i32 {
         let mut q = std::collections::VecDeque::with_capacity(bank.len() + 1);
         let mut visited = std::collections::HashSet::new();

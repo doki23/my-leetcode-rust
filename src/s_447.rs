@@ -1,12 +1,12 @@
 use crate::Solution;
-use std::collections::HashMap;
 
 impl Solution {
+    #[cfg(test)]
     pub fn number_of_boomerangs(points: Vec<Vec<i32>>) -> i32 {
         let n = points.len();
         let mut total = 0;
         for i in 0..n {
-            let mut dist_map = HashMap::with_capacity(n * (n - 1));
+            let mut dist_map = std::collections::HashMap::with_capacity(n * (n - 1));
             for j in 0..n {
                 if i != j {
                     let x_dis = (points[j][0] - points[i][0]) * (points[j][0] - points[i][0]);
