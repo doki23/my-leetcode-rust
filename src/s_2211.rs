@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    #[cfg(test)]
+    #[allow(dead_code)]
     pub fn count_collisions(directions: String) -> i32 {
         let mut chars = directions.chars().collect::<Vec<char>>();
         let mut count = 0;

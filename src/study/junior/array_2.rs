@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    #[cfg(test)]
+    #[allow(dead_code)]
     pub fn max_profit(prices: Vec<i32>) -> i32 {
         let mut profit = 0;
         let mut next = 1;

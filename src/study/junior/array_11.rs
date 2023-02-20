@@ -1,6 +1,7 @@
 use crate::Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn rotate_matrix(matrix: &mut Vec<Vec<i32>>) {
         let len = matrix.len();
         for i in 0..=(len - 1) / 2 {

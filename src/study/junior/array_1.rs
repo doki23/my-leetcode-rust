@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    #[cfg(test)]
+    #[allow(dead_code)]
     pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
         let mut tail = 0;
         let mut next = tail + 1;

@@ -9,3 +9,5 @@ mod array_6;
 mod array_7;
 mod array_8;
 mod array_9;
+mod string_1;
+mod string_2;

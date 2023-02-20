@@ -10,7 +10,7 @@ use crate::Solution;
 // M             1000
 //
 impl Solution {
-    #[cfg(test)]
+    #[allow(dead_code)]
     pub fn roman_to_int(s: String) -> i32 {
         let mapping: std::collections::HashMap<char, i32> = [
             ('I', 1),

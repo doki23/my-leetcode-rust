@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    #[cfg(test)]
+    #[allow(dead_code)]
     pub fn move_zeroes(nums: &mut Vec<i32>) {
         let mut first_zero = 0;
         while first_zero < nums.len() && nums[first_zero] != 0 {

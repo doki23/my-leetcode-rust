@@ -1,7 +1,7 @@
 use crate::Solution;
 
 impl Solution {
-    #[cfg(test)]
+    #[allow(dead_code)]
     pub fn number_of_boomerangs(points: Vec<Vec<i32>>) -> i32 {
         let n = points.len();
         let mut total = 0;
