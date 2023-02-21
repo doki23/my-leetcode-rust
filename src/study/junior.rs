@@ -11,3 +11,5 @@ mod array_8;
 mod array_9;
 mod string_1;
 mod string_2;
+mod string_3;
+mod string_4;

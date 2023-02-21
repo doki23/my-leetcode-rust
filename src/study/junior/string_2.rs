@@ -5,22 +5,25 @@ impl Solution {
     pub fn reverse(x: i32) -> i32 {
         let mut v = vec![];
         let sign = if x < 0 { -1 } else { 1 };
-        let mut x = x * sign;
-        let mut mu = 1;
+        let mut x: u64 = (x * sign) as u64;
+        let mut mu: u64 = 1;
         loop {
             if x == 0 {
                 break;
             }
-            let a = x % (mu * 10);
+            let a: u64 = x % (mu * 10);
             x -= a;
             v.push(a / mu);
             mu *= 10;
         }
         let mut ans = 0;
         for i in 0..v.len() {
-            ans += v[i] * 10i32.pow((v.len() - 1 - i) as u32);
+            ans += v[i] * 10u64.pow((v.len() - 1 - i) as u32);
+            if ans > i32::MAX as u64 {
+                return 0;
+            }
         }
-        ans * sign
+        sign * (ans as i32)
     }
 }
 
@@ -50,6 +53,12 @@ fn test_cases() {
 
     let t4 = TestCase { x: 0, answer: 0 };
     test_cases.push(t4);
+
+    let t5 = TestCase {
+        x: 1234567899,
+        answer: 0,
+    };
+    test_cases.push(t5);
 
     for tc in test_cases {
         let ans = Solution::reverse(tc.x);
