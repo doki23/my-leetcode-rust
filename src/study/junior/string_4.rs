@@ -10,9 +10,7 @@ impl Solution {
         for c in s.chars() {
             let i = c as usize - start;
             map[i] += 1;
-            if map[i] == 0 {
-                bitmap.bitand_assign(((1 << 26) - 1) - (1 << i))
-            } else {
+            if map[i] != 0 {
                 bitmap.bitor_assign(1 << i);
             }
         }
