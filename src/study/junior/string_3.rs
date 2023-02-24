@@ -5,7 +5,7 @@ impl Solution {
     pub fn first_uniq_char(s: String) -> i32 {
         let mut map = [-1i32; 26];
         let start = 'a' as u8;
-        let mut offset = 0usize;
+        let mut offset;
         for (i, b) in s.bytes().enumerate() {
             offset = (b - start) as usize;
             if map[offset] == -1 {

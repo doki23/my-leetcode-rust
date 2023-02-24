@@ -1,29 +1,24 @@
 use crate::Solution;
-use std::ops::{BitAndAssign, BitOrAssign};
 
 impl Solution {
     pub fn is_anagram(s: String, t: String) -> bool {
-        use std::ops::{BitAndAssign, BitOrAssign};
+        if s.len() != t.len() {
+            return false;
+        }
         let mut map = vec![0; 26];
         let start = 'a' as usize;
-        let mut bitmap = 0u32;
         for c in s.chars() {
             let i = c as usize - start;
             map[i] += 1;
-            if map[i] != 0 {
-                bitmap.bitor_assign(1 << i);
-            }
         }
         for c in t.chars() {
             let i = c as usize - start;
-            map[i] -= 1;
             if map[i] == 0 {
-                bitmap.bitand_assign(((1 << 26) - 1) - (1 << i))
-            } else {
-                bitmap.bitor_assign(1 << i);
+                return false;
             }
+            map[i] -= 1;
         }
-        bitmap == 0
+        true
     }
 }
 
